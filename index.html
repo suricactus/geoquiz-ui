@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<style>
+		.quiz {
+
+		}
+
+		.gq-nav-prev {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			height: 100%;
+			background: red;	
+		}
+
+		.gq-nav-next {
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			height: 100%;	
+			background: red;	
+		}
+	</style>
+</head>
+<body>
+
+
+<div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-brand">
+			{{quiz_caption}}
+		</div>
+
+		<ul class="nav navbar-nav navbar-right">	
+			<li>
+				<a href="#menu">
+					<span class="glyphicon glyphicon-wrench"></span>
+				</a>
+			</li>
+		</ul>
+		<p class="navbar-text navbar-right">{{correct_answers}}</p>
+		<p class="navbar-text navbar-right">{{wrong_answers}}</p>
+		<p class="navbar-text navbar-right" gq-timer>{{}}</p>
+	</nav>
+	<div class="map">
+
+	</div>
+	<div class="bottom-bar">
+		<div class="bar-body">
+			<div class="question-counter">
+				{{current}} / {{questions_count}}
+			</div>
+			<div class="question-caption">
+				{{question_caption}}
+			</div>
+			<div class="question-answers"
+				ng-if="is_question_answers_visible"
+			>
+				<input type="text" />
+
+			</div>
+		</div>
+
+		<div class="gq-nav-prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</div>
+		<div class="gq-nav-next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</div>
+	</div>
+
+</div>
+
+
+</body>
+</html>

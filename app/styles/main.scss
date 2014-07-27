@@ -1,0 +1,22 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+@import "reset-scss/reset.scss";
+// endbower
+
+@import "geo-quiz.scss";
+
+* {
+  box-sizing: border-box;
+} 
+
+body {
+  font-size: 14px;
+}
+
+input, select, textarea, button {
+  margin: 0px;
+  padding: 0.5rem 0.8rem;
+  line-height: 1.2em;
+  border-width: 2px;
+}

@@ -1,0 +1,76 @@
+<div class="gq-main">
+            <div class="gq-header">
+                <div class="gq-container">
+                    <a class="gq-item gq-btn">
+                        <span class="fa fa-gear"></span>
+                    </a>
+                    <div class="gq-item">
+                        <span class="fa" ng-class="{
+                            'fa-pause': !isPaused,
+                            'fa-play': isPaused
+                        }"
+                        ></span>
+                        18:19:18    
+                    </div>  
+                    <div class="gq-item gq-success">
+                        1
+                    </div>
+                    <div class="gq-item gq-error">
+                        1
+                    </div>
+                </div>
+                <div class="gq-caption">
+                    {{quiz.db['caption']}}    
+                </div>
+            <div style="clear: both"></div>
+        </div>
+
+
+        <div class="gq-map" style="width: 100%; height: 200px; background:lightgreen;">
+
+        </div>
+
+
+        <div class="gq-footer">
+            <div class="gq-container">
+
+                <div class="gq-question">
+                    <div class="gq-question-counter">
+                        {{question.currentIndex + 1}}
+                        /
+                        {{quiz.db['questions_count']}}
+                    </div>
+                    <div class="gq-question-caption">
+                        {{question.db['caption'] }}
+                    </div>
+                </div>
+
+                <div class="gq-answers">
+                    <form>
+                        <div class="gq-input-group" ng-if="question.answerWithInput">
+                            <input type="text" class="gq-answer-input" placeholder="answer" />
+                            <span class="gq-input-group-controlls">
+                                <button type="submit" class="gq-answer-submit">
+                                    <span class="fa fa-send"></span>
+                                </button>
+                            </span>
+                        </div>
+                        <div ng-if="question.answerWithChoice">
+                            <label ng-repeat="answer in question.answers">
+                                <input type="{{answer.inputType}}" name="question-answers" ng-value="answer.db.value" />
+                                {{answer.db.caption}}
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <a class="gq-nav-prev gq-btn" ng-click="footerNavPrev()">
+                <span class="gq-icon fa fa-chevron-left"></span>
+            </a>
+            <a class="gq-nav-next gq-btn" ng-click="footerNavNext()">
+                <span class="gq-icon fa fa-chevron-right"></span>
+            </a>
+        </div>
+
+        <pre>{{quiz| json}}</pre>

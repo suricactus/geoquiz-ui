@@ -1,0 +1,164 @@
+$background-color: grey;
+$default-foreground-color: lightgrey;
+$default-font-size: 16px;
+$header-height: 4rem;
+$default-padding: .8rem;
+$button-background: darkgray;
+$font-success-color: green;
+$font-error-color: red;
+$footer-nav-width: 3rem;
+
+
+.gq-main {
+    background: $background-color;
+    font-size: $default-font-size;
+
+    .gq-header {
+        background-color: $default-foreground-color;
+        width: 100%;
+        white-space: nowrap;
+
+
+        .gq-caption {
+            display: inline-block;
+            padding: $default-padding;
+            height: $header-height;
+            line-height: $header-height - 2*$default-padding;
+            color: white;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-shadow: 1px 1px black;
+        }
+
+        .gq-container {
+            display: inline-block;
+            float: right;
+            overflow: hidden;
+            min-width: 250px;
+        }
+
+        .gq-item {
+            display: inline-block;
+            float: right;
+            padding: $default-padding;
+            height: $header-height;
+            line-height: $header-height - 2*$default-padding;
+            border-left-color: red;
+            border-left-width: 1px;
+            border-left-style: solid;
+        }
+    }
+
+    .gq-footer {
+        position: relative;
+        background-color: $default-foreground-color; 
+
+        .gq-container {
+            display: table;
+            padding-left: $footer-nav-width;
+            padding-right: $footer-nav-width;
+            width: 100%;
+            
+            .gq-question {
+                
+                .gq-question-counter {
+                    float: left;
+                    padding: $default-padding;
+                    font-size: 1rem;
+                }
+
+                .gq-question-caption {
+                    padding: $default-padding;
+                    text-align: center;
+                }
+            }
+
+            .gq-answers {
+                background: pink;
+                width: 100%;
+            }
+        }
+
+        .gq-nav-prev, .gq-nav-next {
+            background: red;
+            position: absolute;
+            top: 0px;
+            height: 100%;
+            width: $footer-nav-width;
+            line-height: 100%;
+            text-align: center;
+            
+            .gq-icon {
+                position: absolute;
+                top: 50%;
+                margin-top: -0.5em;
+            }
+        }
+
+        .gq-nav-prev {
+            left: 0px;
+
+            .gq-icon {
+                left: 50%;
+                margin-left: -0.5em;
+            }
+        }
+        
+        .gq-nav-next {
+            right: 0px;
+
+            .gq-icon {
+                right: 50%;
+                margin-right: -0.5em;
+            }
+        }
+
+    }
+
+
+
+
+
+
+    .gq-btn {
+        background: $button-background;
+        color:  initial;
+        text-decoration: none;
+
+        &:active, &:hover {
+            text-decoration: none;
+            background: grey;
+            cursor: pointer;
+        }
+    }
+    .gq-input-group {
+        background: pink;
+        display: table;
+        width: 100%;
+
+        input {
+            display: table-cell;
+            width: 100%;
+        }
+
+        .gq-input-group-controlls {
+            display: table-cell;
+            width: 1%;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+
+    .gq-success {
+        color: $font-success-color;
+    }
+    .gq-error {
+        color: $font-error-color; 
+    }
+
+}
+
+
